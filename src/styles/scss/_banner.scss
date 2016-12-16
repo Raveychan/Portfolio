@@ -1,0 +1,11 @@
+.background-image {
+	height: 600px;
+	background: {
+		image: url("../images/banner.png");
+		size: auto 160%;
+		repeat: no-repeat;
+		position: top center;
+	};
+
+	z-index: -10;
+}

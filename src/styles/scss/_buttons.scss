@@ -1,0 +1,19 @@
+.button {
+	color: $secondaryColor;
+	background-color: $primaryColor;
+	width: 200px;
+	height: 50px;
+	text-align: center;
+	line-height: 2;
+	font-size: $textMain;
+	font-family: $secondaryFont;
+
+	&--homepage {
+		display: inline-block;
+		margin-right: 90px;
+
+		&:last-of-type {
+			margin-right: 0;
+		}
+	}
+}

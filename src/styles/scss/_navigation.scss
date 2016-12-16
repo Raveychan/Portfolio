@@ -1,0 +1,25 @@
+.navigation {
+	position: absolute;
+	top: 0;
+	z-index: 1;
+	width: 100%;
+	height: 45px;
+	display: block;
+	background-color: white;
+	font-family: $primaryFont;
+	font-size: $textMain;
+	text-align: right;
+	box-shadow: $shadow;
+	padding-top: 20px;
+
+	&__elements {
+		padding: 40px;
+		text-decoration: none;
+		color: $primaryColor;
+		text-transform: uppercase;
+
+		&:last-of-type {
+			padding-right: 100px;
+		}
+	}
+}
