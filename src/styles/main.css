@@ -402,9 +402,6 @@ template {
 [hidden] {
   display: none; }
 
-.yellow {
-  color: goldenrod; }
-
 .background-image {
   height: 600px;
   background-image: url("../images/banner.png");
@@ -412,6 +409,11 @@ template {
   background-repeat: no-repeat;
   background-position: top center;
   z-index: -10; }
+  .background-image__overlay {
+    position: relative;
+    padding: 8.5% 0 0 8%;
+    min-height: 200px;
+    width: 500px; }
 
 .navigation {
   position: absolute;
@@ -427,12 +429,17 @@ template {
   box-shadow: 2px 2px 20px #888888;
   padding-top: 20px; }
   .navigation__elements {
-    padding: 40px;
+    padding: 8px 20px 5px;
+    margin-right: 20px;
     text-decoration: none;
-    color: black;
-    text-transform: uppercase; }
+    text-transform: uppercase;
+    color: black; }
     .navigation__elements:last-of-type {
-      padding-right: 100px; }
+      margin-right: 100px; }
+    .navigation__elements:hover {
+      background-color: black;
+      color: white;
+      transition: all 500ms ease-in-out; }
 
 .button {
   color: white;
@@ -442,12 +449,21 @@ template {
   text-align: center;
   line-height: 2;
   font-size: 26px;
-  font-family: "Consolas", "sans-serif"; }
+  font-family: "Consolas", "sans-serif";
+  display: inline-block;
+  margin-right: 90px; }
   .button--homepage {
-    display: inline-block;
-    margin-right: 90px; }
+    transition: all 500ms ease-in; }
     .button--homepage:last-of-type {
       margin-right: 0; }
+    .button--homepage:hover {
+      background-image: url("../images/watercolor-png.png");
+      background-color: transparent;
+      background-size: auto 200%;
+      background-repeat: no-repeat;
+      background-position: center center;
+      color: black;
+      transition: background 600ms ease-in-out, color 300ms ease-in-out; }
 
 .mainSection {
   background-color: white;
@@ -458,15 +474,45 @@ template {
   text-align: center;
   width: 100%;
   box-shadow: 2px 2px 20px #888888;
-  padding-bottom: 62px; }
+  padding-bottom: 50px; }
 
 .text--head {
   font-family: "Consolas", "sans-serif";
   font-size: 55px;
   text-transform: capitalize;
-  margin-bottom: 10px; }
+  margin: 30px 0 0 0;
+  color: black; }
 
 .text--paragraph {
-  margin-bottom: 60px;
+  margin: 15px 0 30px;
   font-family: "Mongolian Baiti", "sans-serif";
   font-size: 35px; }
+
+.buttonSection {
+  margin-bottom: 20px; }
+
+.yellow {
+  color: #ba9634; }
+
+.pinky {
+  color: #f2599b; }
+
+.purply {
+  color: #934cc9; }
+
+.quote {
+  font-size: 55px;
+  display: inline-block;
+  font-family: "Consolas", "sans-serif";
+  color: white;
+  background-color: black;
+  font-style: italic;
+  padding: 5px 10px;
+  margin: 1% 0 1% 10%;
+  transition: all 500ms ease-in-out; }
+  .quote:hover {
+    color: white;
+    background-color: black; }
+
+.fade-in {
+  transition: all 500ms ease-in-out; }

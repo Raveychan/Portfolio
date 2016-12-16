@@ -13,13 +13,21 @@
 	padding-top: 20px;
 
 	&__elements {
-		padding: 40px;
+		padding: 8px 20px 5px;
+		margin-right: 20px;
 		text-decoration: none;
-		color: $primaryColor;
 		text-transform: uppercase;
+		color: $primaryColor;
+
 
 		&:last-of-type {
-			padding-right: 100px;
+			margin-right: 100px;
+		}
+
+		&:hover {
+			background-color: $primaryColor;
+			color: $secondaryColor;
+			transition: $transition;
 		}
 	}
 }

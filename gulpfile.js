@@ -36,7 +36,7 @@ var handleError = function(error){
 }
 
 gulp.task('js', ['cleanJs'], function () {
-  return gulp.src(['src/scripts/**/*.js'])
+  return gulp.src(['src/scripts/own/my.js'])
     .pipe(plumber())
     .pipe(rename('main.js'))
     .pipe(concat('main.js'))

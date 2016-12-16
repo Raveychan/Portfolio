@@ -6,6 +6,15 @@
 		repeat: no-repeat;
 		position: top center;
 	};
-
 	z-index: -10;
+
+	&__overlay {
+		position: relative;
+		padding: 8.5% 0 0 8%;
+		min-height: 200px;
+		width: 500px;
+	}
+}
+
+.quote--homepage {
 }

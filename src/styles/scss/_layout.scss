@@ -9,3 +9,24 @@
 .purply {
 	color: $purple;
 }
+
+.quote {
+	font-size: $textHeading;
+	display: inline-block;
+	font-family: $secondaryFont;
+	color: $secondaryColor;
+	background-color: $primaryColor;
+	font-style: italic;
+	padding: 5px 10px;
+	margin: 1% 0 1% 10%;
+	transition: $transition;
+
+	&:hover {
+		color: $secondaryColor;
+		background-color: $primaryColor;
+	}
+}
+
+.fade-in {
+	transition: $transition;
+}

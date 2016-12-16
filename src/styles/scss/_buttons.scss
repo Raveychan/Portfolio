@@ -7,13 +7,26 @@
 	line-height: 2;
 	font-size: $textMain;
 	font-family: $secondaryFont;
+	display: inline-block;
+	margin-right: 90px;
 
 	&--homepage {
-		display: inline-block;
-		margin-right: 90px;
+		transition: all 500ms ease-in;
 
 		&:last-of-type {
 			margin-right: 0;
+		}
+
+		&:hover {
+			background: {
+				image: url("../images/watercolor-png.png");
+				color: transparent;
+				size: auto 200%;
+				repeat: no-repeat;
+				position: center center;
+			}
+			color: $primaryColor;
+			transition: background 600ms ease-in-out, color 300ms ease-in-out;
 		}
 	}
 }
