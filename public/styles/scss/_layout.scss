@@ -1,0 +1,68 @@
+.yellow {
+	color: $golden;
+}
+
+.pinky {
+	color: $pink;
+}
+
+.purply {
+	color: $purple;
+}
+
+.quote {
+	display: inline-block;
+	padding: 5px 10px;
+	margin: 1% 0 1% 10%;
+
+	font-size: $textHeading;
+	font-family: $secondaryFont;
+	color: $secondaryColor;
+	background-color: $primaryColor;
+	font-style: italic;
+
+	transition: $transition;
+
+	&:hover {
+		color: $secondaryColor;
+		background-color: $primaryColor;
+	}
+}
+
+.fade-in {
+	transition: $transition;
+}
+
+.logo {
+
+	position: fixed;
+	top: 5%;
+	left: 50%;
+	transform: translate(-50%,0);
+	z-index: 30;
+
+	&__image {
+		z-index: 32;
+		width: 50px;
+		height: 80px;
+	}
+
+	&__background {
+
+		&:after {
+			top: -10px;
+			left: -50px;
+			content: "";
+			position: absolute;
+			width: 100px;
+			height: 100px;
+			background: white;
+			transform: rotate(45deg);
+			box-shadow: 0 0 10px black;
+		}
+	}
+}
+
+.input {
+	padding: 2px 0 0 10px;
+}

@@ -1,0 +1,23 @@
+.background-image {
+	height: 600px;
+	width: 100%;
+
+	background: {
+		size: cover;
+		repeat: no-repeat;
+		position: center center;
+	};
+	z-index: -10;
+
+	&__overlay {
+		position: absolute;
+		padding: 160px 0 0 8%;
+		min-height: 200px;
+		width: 500px;
+		z-index: 20;
+	}
+}
+
+.main-carousel {
+	z-index: -200;
+}

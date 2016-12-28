@@ -1,0 +1,40 @@
+.mainSection {
+	position: relative;
+	width: 100%;
+	background-color: $secondaryColor;
+	text-align: center;
+	padding-bottom: 50px;
+
+	&:before {
+		z-index: -1;
+		position: absolute;
+		top: -1px;
+		left: 0;
+		content: '';
+		height: 20px;
+		width: 100%;
+		box-shadow: $shadow;
+	}
+}
+
+.text {
+
+	&--head {
+		margin-top: 0;
+		font-family: $secondaryFont;
+		font-size: $textHeading;
+		text-transform: capitalize;
+		color: $primaryColor;
+		padding-top: 30px;
+	}
+
+	&--paragraph {
+		margin: 15px 0 30px;
+		font-family: $primaryFont;
+		font-size: $textParagraph;
+	}
+}
+
+.buttonSection {
+	margin-bottom: 20px;
+}

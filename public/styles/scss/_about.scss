@@ -1,0 +1,63 @@
+.about {
+	display: block;
+	overflow: hidden;
+	margin: 120px 0 0;
+	height: 820px;
+	width: 600px;
+	box-shadow: $shadow;
+
+	&--me {
+		transform: translate(0,30%);
+		margin-left: auto;
+		margin-right: auto;
+		opacity: 0;
+		z-index: -100;
+		width: 400px;
+		padding: 40px;
+		text-align: justify;
+	}
+
+	&--right {
+		margin-top: -470px;
+		float: right;
+	}
+
+	&--left {
+		float: left;
+	}
+
+	&__image {
+		height: 1200px;
+
+		&--decoration {
+			z-index: -50;
+			position: relative;
+			opacity: 0;
+			width: 400px;
+		}
+
+		&--bottom {
+		}
+
+		&--top {
+		}
+	}
+}
+
+.flipX {
+	-moz-transform: scaleX(-1);
+	-o-transform: scaleX(-1);
+	-webkit-transform: scaleX(-1);
+	transform: scaleX(-1);
+	filter: FlipH;
+	-ms-filter: "FlipH";
+}
+
+.flipY {
+	-moz-transform: scaleY(-1);
+	-o-transform: scaleY(-1);
+	-webkit-transform: scaleY(-1);
+	transform: scaleY(-1);
+	filter: FlipH;
+	-ms-filter: "FlipH";
+}

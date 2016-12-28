@@ -1,0 +1,43 @@
+.button {
+	display: inline-block;
+	width: 200px;
+	height: 50px;
+	margin-right: 90px;
+
+	color: $secondaryColor;
+	background-color: $primaryColor;
+	border: hidden;
+	text-align: center;
+	line-height: 2;
+	font-size: $textMain;
+	font-family: $secondaryFont;
+
+	&:hover {
+		background-color: $secondaryColor;
+		color: $primaryColor;
+		transition: background 600ms ease-in-out, color 300ms ease-in-out;
+	}
+
+	&--homepage {
+		transition: all 500ms ease-in;
+
+		&:last-of-type {
+			margin-right: 0;
+		}
+
+		&:hover {
+			background: {  image: url("../images/watercolor-png.png");
+				color: transparent;
+				size: auto 200%;
+				repeat: no-repeat;
+				position: center center;
+			}
+		}
+	}
+
+	&--contact {
+		display: block;
+		margin-right: auto;
+		margin-left: auto;
+	}
+}

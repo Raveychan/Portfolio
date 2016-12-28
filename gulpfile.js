@@ -16,9 +16,8 @@ var gutil = require('gulp-util');
 // Tasks for developing (coding)
 
 gulp.task('php', function () {
-  gulp.src('src/views/*')
+  gulp.src('app/views/*')
     .pipe(plumber())
-    .pipe(gulp.dest('src'))
     .pipe(browserSync.reload({
       stream: true
     }));
@@ -26,7 +25,7 @@ gulp.task('php', function () {
 
 gulp.task('host', function () {
   browserSync.init({
-    proxy: 'http://localhost/Portfolio/src/views/'
+    proxy: 'http://portfolio.com'
   });
 });
 
@@ -36,37 +35,37 @@ var handleError = function(error){
 }
 
 gulp.task('js', ['cleanJs'], function () {
-  return gulp.src(['src/scripts/own/my.js'])
+  return gulp.src(['public/scripts/own/my.js'])
     .pipe(plumber())
     .pipe(rename('main.js'))
     .pipe(concat('main.js'))
-    .pipe(gulp.dest('src/scripts'))
+    .pipe(gulp.dest('public/scripts'))
     .pipe(browserSync.stream());
 });
 
 gulp.task('scss', ['cleanScss'], function () {
-  return gulp.src(['src/styles/scss/main.scss'])
+  return gulp.src(['public/styles/scss/main.scss'])
     .pipe(plumber(handleError))
     .pipe(sass())
     .pipe(concat('main.css'))
-    .pipe(gulp.dest('src/styles'))
+    .pipe(gulp.dest('public/styles'))
     .pipe(browserSync.stream());
 });
 
 gulp.task('cleanScss', function () {
-  return gulp.src('src/styles/styles.css')
+  return gulp.src('public/styles/styles.css')
     .pipe(vinylPaths(del))
 });
 
 gulp.task('cleanJs', function () {
-  return gulp.src('src/scripts/main.js')
+  return gulp.src('public/scripts/main.js')
     .pipe(vinylPaths(del))
 });
 
 gulp.task('watch', function() {
-  gulp.watch(['src/styles/**/*.scss', 'src/styles/**/*.css', '!src/styles/styles.css'], ['scss']);
-  gulp.watch(['src/scripts/**/*.js', '!src/scripts/main.js'], ['js']);
-  gulp.watch('src/views/*.php', ['php']);
+  gulp.watch(['public/styles/**/*.scss', 'public/styles/**/*.css', '!public/styles/styles.css'], ['scss']);
+  gulp.watch(['public/scripts/**/*.js', '!public/scripts/main.js'], ['js']);
+  gulp.watch('public/views/*.php', ['php']);
 })
 
 gulp.task('default', gulpSequence(['php', 'js', 'scss'], 'host', 'watch'));
@@ -74,13 +73,13 @@ gulp.task('default', gulpSequence(['php', 'js', 'scss'], 'host', 'watch'));
 // Tasks for deploying (distribution)
 
 gulp.task('htmlDeploy', function () {
-  gulp.src(['src/*', 'src/.*', 'src/fonts/**/*'])
+  gulp.src(['public/*', 'public/.*', 'public/fonts/**/*'])
     .pipe(plumber())
     .pipe(gulp.dest('dist'));
 });
 
 gulp.task('scssDeploy', function () {
-  gulp.src(['src/styles/styles.css'])
+  gulp.src(['public/styles/styles.css'])
     .pipe(plumber())
     .pipe(autoprefixer())
     .pipe(minify())
@@ -88,7 +87,7 @@ gulp.task('scssDeploy', function () {
 });
 
 gulp.task('jsDeploy', function () {
-  return gulp.src(['src/scripts/**/*.js', '!src/scripts/main.js'])
+  return gulp.src(['public/scripts/**/*.js', '!public/scripts/main.js'])
     .pipe(plumber())
     .pipe(rename('main.js'))
     .pipe(concat('main.js'))
@@ -97,7 +96,7 @@ gulp.task('jsDeploy', function () {
 });
 
 gulp.task('imagesDeploy', function () {
-  gulp.src(['src/images/*.png', 'src/images/*.jpg', 'src/images/*.ico'])
+  gulp.src(['public/images/*.png', 'public/images/*.jpg', 'public/images/*.ico'])
     .pipe(plumber())
     .pipe(imageopt({
       optimalizationLevel: 5,

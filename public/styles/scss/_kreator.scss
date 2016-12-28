@@ -1,0 +1,42 @@
+$resolutions: 320px, 480px, 768px, 992px, 1200px;
+$size-names: micro, tiny, small, medium, large;
+
+@function column-width($cols) {
+  @return 100%/12*$cols;
+}
+
+[class*='column-'] {
+  float: left;
+  display: inline-block; position: relative; box-sizing: border-box; min-height: 1px;
+  padding: auto 1em auto 1em;
+  width: 100%;
+
+  &:after, &:before {
+    margin: 0;
+    padding: 0;
+  }
+
+  &:after {
+    clear: both;
+  }
+}
+
+@for $x from 1 through length($resolutions) {
+  @if $x == 1 {
+    @media only screen {
+      @for $i from 1 through 12 {
+        .column-#{nth($size-names, $x)}-#{$i} {
+          width: column-width($i);
+        }
+      }
+    }
+  } @else {
+    @media only screen and (min-width: nth($resolutions, $x)-1) {
+      @for $i from 1 through 12 {
+        .column-#{nth($size-names, $x)}-#{$i} {
+          width: column-width($i);
+        }
+      }
+    }
+  }
+}
