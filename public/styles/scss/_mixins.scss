@@ -3,3 +3,68 @@
 	top: 50%;
 	left: 50%;
 }
+
+$min: min-width;
+$max: max-width;
+
+@mixin mq($constraint, $viewport1, $viewport2: null) {
+
+	@if $constraint == $min {
+
+		@media screen and ($min: $viewport1) {
+			@content;
+		}
+
+	} @else if $constraint == $max {
+
+		@media screen and ($max: $viewport1) {
+			@content;
+		}
+
+	} @else {
+
+		@media screen and ($min: $viewport1) and ($max: $viewport2) {
+			@content;
+		}
+
+	}
+
+}
+
+// USAGE:
+//
+// ---- for max-width media query ----
+//
+//  @include mq(1080px) {
+//      display:none;
+//  }
+//
+// ---- for min-width media query ----
+//
+//  @include mq(1080px, min) {
+//      display:none;
+//  }
+//
+// ---- OR for min-max ----
+//
+// @include mq((700px, 780px)) {
+//     display:block;
+// }
+//
+// ---- for max-height media query ----
+//
+//  @include mq(1080px, max, height) {
+//      display:none;
+//  }
+//
+// ---- for min-height media query ----
+//
+//  @include mq(1080px, min, height) {
+//      display:none;
+//  }
+//
+// ---- for min-max height media query ----
+//
+//  @include mq((700px, 780px), null, height) {
+//      display:none;
+//  }

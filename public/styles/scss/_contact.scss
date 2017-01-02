@@ -36,6 +36,10 @@
 
 .container {
 	margin: 0 30%;
+
+	@include mq($max,1220px) {
+		margin: 0 10%;
+	}
 }
 
 .container form input,

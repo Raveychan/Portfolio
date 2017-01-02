@@ -5,10 +5,10 @@ $('.main-carousel').flickity({
     prevNextButtons: false
 });
 
-$('.about--left').fadeIn(0).animate({"left":"-600px"},800);
-$('.about--right').fadeIn(0).animate({"right":"-600px"},800);
+$('.about--left').fadeIn(0).delay( 50 ).animate({ opacity: 1}, 800);
+$('.about--right').fadeIn(0).delay( 50 ).animate({ opacity: 1}, 800);
 
-$('.about--me, .about__image--decoration').fadeIn(0).delay( 400 ).animate({ opacity: 1}, 800);
+$('.about__me, .about__image--decoration').fadeIn(0).delay( 400 ).animate({ opacity: 1}, 800);
 
 
 

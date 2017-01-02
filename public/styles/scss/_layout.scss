@@ -34,30 +34,33 @@
 }
 
 .logo {
-
 	position: fixed;
-	top: 5%;
+	top: 30px;
 	left: 50%;
-	transform: translate(-50%,0);
-	z-index: 30;
+	z-index: 101;
 
 	&__image {
-		z-index: 32;
-		width: 50px;
-		height: 80px;
+		display: block;
+		top: 5px;
+		left: 50%;
+		position: absolute;
+		transform: translate(-50%,0);
+		z-index: 102;
+		width: 40px;
+		height: 60px;
 	}
 
 	&__background {
 
 		&:after {
-			top: -10px;
-			left: -50px;
+			transform-origin: 0;
+			top: 0;
 			content: "";
 			position: absolute;
-			width: 100px;
-			height: 100px;
+			width: 70px;
+			height: 70px;
 			background: white;
-			transform: rotate(45deg);
+			transform: rotate(45deg) translate(-50%,0);
 			box-shadow: 0 0 10px black;
 		}
 	}

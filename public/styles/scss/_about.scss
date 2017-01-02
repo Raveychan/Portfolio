@@ -1,39 +1,77 @@
 .about {
-	display: block;
+	max-height: 1360px;
+	margin-top: -200px;
+	z-index: -100;
+	position: absolute;
 	overflow: hidden;
-	margin: 120px 0 0;
-	height: 820px;
-	width: 600px;
-	box-shadow: $shadow;
+	width: 50%;
 
-	&--me {
-		transform: translate(0,30%);
-		margin-left: auto;
-		margin-right: auto;
+	@include mq($max,1680px) {
+		width: 50%;
+	}
+
+	@include mq($max,1366px) {
+		width: 50%;
+	}
+
+	@include mq($max,1025px) {
+		display: none;
+	}
+
+
+	&__me {
+		margin: 150px auto 100px;
 		opacity: 0;
-		z-index: -100;
-		width: 400px;
+		z-index: -1;
+		background-color: $secondaryColor;
+		width: 40%;
 		padding: 40px;
 		text-align: justify;
+		box-shadow: $shadow;
+
+		@include mq($max,1367px) {
+			width: 60%;
+		}
+
+		@include mq($max,920px) {
+			width: 70%;
+		}
+
+		@include mq($max,420px) {
+			width: 80%;
+		}
+
+		@include mq($max,370px) {
+			width: 80%;
+		}
 	}
 
 	&--right {
-		margin-top: -470px;
-		float: right;
+		opacity: 0;
+		right: 0;
+
 	}
 
 	&--left {
-		float: left;
+		opacity: 0;
 	}
 
 	&__image {
-		height: 1200px;
+		height: 1500px;
+
+		@include mq($max,1680px) {
+			height: 1300px;
+		}
+
+		@include mq($max,1367px) {
+			height: 1280px;
+		}
 
 		&--decoration {
-			z-index: -50;
+			z-index: 1;
 			position: relative;
 			opacity: 0;
-			width: 400px;
+			width: 100%;
 		}
 
 		&--bottom {

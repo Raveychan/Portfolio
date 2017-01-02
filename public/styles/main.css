@@ -684,16 +684,24 @@ template {
     padding: 160px 0 0 8%;
     min-height: 200px;
     width: 500px;
-    z-index: 20; }
+    z-index: 10; }
 
 .main-carousel {
   z-index: -200; }
+
+li {
+  display: inline-block; }
+  li:last-of-type {
+    margin-right: 100px; }
+    @media screen and (max-width: 1680px) {
+      li:last-of-type {
+        margin-right: 30px; } }
 
 .navigation {
   position: fixed;
   display: block;
   top: 0;
-  z-index: 1;
+  z-index: 100;
   padding-top: 20px;
   width: 100%;
   height: 45px;
@@ -702,15 +710,24 @@ template {
   font-size: 26px;
   text-align: right;
   box-shadow: 2px 2px 20px black; }
+  .navigation__wrap {
+    margin: 0; }
+  .navigation__left {
+    left: 0; }
   .navigation__elements {
-    padding: 8px 20px 5px;
-    margin-right: 20px;
+    padding: 10px 20px;
+    margin: 0 25px 0 0;
     text-decoration: none;
     text-transform: uppercase;
     color: black;
     transition: all 500ms ease-in-out; }
-    .navigation__elements:last-of-type {
-      margin-right: 100px; }
+    @media screen and (max-width: 1680px) {
+      .navigation__elements {
+        font-size: 20px; } }
+    @media screen and (max-width: 1366px) {
+      .navigation__elements {
+        font-size: 16px;
+        margin-right: 5px; } }
     .navigation__elements:hover {
       background-color: black;
       color: white;
@@ -843,6 +860,9 @@ template {
 
 .container {
   margin: 0 30%; }
+  @media screen and (max-width: 1220px) {
+    .container {
+      margin: 0 10%; } }
 
 .container form input,
 .container form textarea {
@@ -888,56 +908,87 @@ template {
 
 .logo {
   position: fixed;
-  top: 5%;
+  top: 30px;
   left: 50%;
-  transform: translate(-50%, 0);
-  z-index: 30; }
+  z-index: 101; }
   .logo__image {
-    z-index: 32;
-    width: 50px;
-    height: 80px; }
+    display: block;
+    top: 5px;
+    left: 50%;
+    position: absolute;
+    transform: translate(-50%, 0);
+    z-index: 102;
+    width: 40px;
+    height: 60px; }
   .logo__background:after {
-    top: -10px;
-    left: -50px;
+    transform-origin: 0;
+    top: 0;
     content: "";
     position: absolute;
-    width: 100px;
-    height: 100px;
+    width: 70px;
+    height: 70px;
     background: white;
-    transform: rotate(45deg);
+    transform: rotate(45deg) translate(-50%, 0);
     box-shadow: 0 0 10px black; }
 
 .input {
   padding: 2px 0 0 10px; }
 
 .about {
-  display: block;
+  max-height: 1360px;
+  margin-top: -200px;
+  z-index: -100;
+  position: absolute;
   overflow: hidden;
-  margin: 120px 0 0;
-  height: 820px;
-  width: 600px;
-  box-shadow: 2px 2px 20px black; }
-  .about--me {
-    transform: translate(0, 30%);
-    margin-left: auto;
-    margin-right: auto;
+  width: 50%; }
+  @media screen and (max-width: 1680px) {
+    .about {
+      width: 50%; } }
+  @media screen and (max-width: 1366px) {
+    .about {
+      width: 50%; } }
+  @media screen and (max-width: 1025px) {
+    .about {
+      display: none; } }
+  .about__me {
+    margin: 150px auto 100px;
     opacity: 0;
-    z-index: -100;
-    width: 400px;
+    z-index: -1;
+    background-color: white;
+    width: 40%;
     padding: 40px;
-    text-align: justify; }
+    text-align: justify;
+    box-shadow: 2px 2px 20px black; }
+    @media screen and (max-width: 1367px) {
+      .about__me {
+        width: 60%; } }
+    @media screen and (max-width: 920px) {
+      .about__me {
+        width: 70%; } }
+    @media screen and (max-width: 420px) {
+      .about__me {
+        width: 80%; } }
+    @media screen and (max-width: 370px) {
+      .about__me {
+        width: 80%; } }
   .about--right {
-    margin-top: -470px;
-    float: right; }
+    opacity: 0;
+    right: 0; }
   .about--left {
-    float: left; }
+    opacity: 0; }
   .about__image {
-    height: 1200px; }
+    height: 1500px; }
+    @media screen and (max-width: 1680px) {
+      .about__image {
+        height: 1300px; } }
+    @media screen and (max-width: 1367px) {
+      .about__image {
+        height: 1280px; } }
     .about__image--decoration {
-      z-index: -50;
+      z-index: 1;
       position: relative;
       opacity: 0;
-      width: 400px; }
+      width: 100%; }
 
 .flipX {
   -moz-transform: scaleX(-1);
