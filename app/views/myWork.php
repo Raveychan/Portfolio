@@ -11,10 +11,11 @@ include_once "inc/navigation.php";
         $i = 0;
         while ($image = readdir($images)) {
             if ($image !== "." && $image !== "..") {
-                echo('<div class="column-medium-4 gallery__image" data-attr="' . $i . '" style="background-image: url(' . ROOTDIR . '/images/gallery/' . $image . ')"></div>');
+                echo('<div class="column-medium-4 gallery__image" data-attr="' . $i . '" style="background-image: url(' . ROOTDIR . '/images/gallery/' . $image . ')"><div class="gallery__overlay" data-attr="' . $i . '"><p class="gallery__overlay__p">SHOW</p></div></div>');
                 $i++;
             }
-        } closedir($images)?>
+        }
+        closedir($images) ?>
     </div>
     <div class="popup">
         <?php
@@ -25,7 +26,8 @@ include_once "inc/navigation.php";
                 echo('<img class="popup-img" data-attr="' . $i . '" src="' . ROOTDIR . '/images/gallery/' . $image . '">');
                 $i++;
             }
-        } closedir($images)?>
+        }
+        closedir($images) ?>
     </div>
 <?php
 include_once "inc/footer.php";

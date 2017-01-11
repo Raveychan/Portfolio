@@ -41,6 +41,7 @@ include_once "inc/navigation.php";
         auctor.
     </p>
     <img class="about__image--decoration about__image--bottom" src="<?= ROOTDIR; ?>/images/decoration.png">
+    <div class="button button--homepage button--myWork"><a href="myWork.php" class="nostyle">My Work</a></div>
 </section>
 
 <?php

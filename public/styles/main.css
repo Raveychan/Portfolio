@@ -673,21 +673,49 @@ template {
   height: 0; }
 
 .background-image {
-  height: 600px;
+  height: 900px;
   width: 100%;
   background-size: cover;
   background-repeat: no-repeat;
   background-position: center center;
   z-index: -10; }
+  @media screen and (max-width: 1366px) {
+    .background-image {
+      height: 800px; } }
+  @media screen and (max-width: 992px) {
+    .background-image {
+      height: 630px; } }
+  @media screen and (max-width: 490px) {
+    .background-image {
+      height: 350px; } }
   .background-image__overlay {
     position: absolute;
-    padding: 160px 0 0 8%;
+    padding: 140px 0 0 8%;
     min-height: 200px;
-    width: 500px;
+    width: 80%;
     z-index: 10; }
+    @media screen and (max-width: 1366px) {
+      .background-image__overlay {
+        padding: 120px 0 0 4%; } }
+    @media screen and (max-width: 992px) {
+      .background-image__overlay {
+        padding: 100px 0 0 3%; } }
+    @media screen and (max-width: 490px) {
+      .background-image__overlay {
+        padding: 90px 0 0 4%; } }
 
 .main-carousel {
-  z-index: -200; }
+  z-index: -200;
+  height: 900px; }
+  @media screen and (max-width: 1366px) {
+    .main-carousel {
+      height: 800px; } }
+  @media screen and (max-width: 992px) {
+    .main-carousel {
+      height: 630px; } }
+  @media screen and (max-width: 490px) {
+    .main-carousel {
+      height: 350px; } }
 
 li {
   display: inline-block; }
@@ -712,6 +740,9 @@ li {
   box-shadow: 2px 2px 20px black; }
   .navigation__wrap {
     margin: 0; }
+    @media screen and (max-width: 1025px) {
+      .navigation__wrap {
+        display: none; } }
   .navigation__left {
     left: 0; }
   .navigation__elements {
@@ -733,16 +764,80 @@ li {
       color: white;
       transition: all 500ms ease-in-out; }
 
+.burgerMenu {
+  color: black;
+  position: fixed;
+  display: none;
+  right: 0;
+  margin: 5px 50px; }
+  @media screen and (max-width: 1025px) {
+    .burgerMenu {
+      display: block;
+      z-index: 100; } }
+
+.box-shadow-menu {
+  position: fixed;
+  padding: 0 32px 29px 0; }
+
+.box-shadow-menu:before {
+  content: "";
+  position: fixed;
+  width: 2em;
+  height: 0.3em;
+  background: black;
+  box-shadow: 0 0.5em 0 0 black, 0 1em 0 0 black, 0 1.5em 0 0 black; }
+
+.dropdown__wrap {
+  display: inline-block;
+  z-index: 101; }
+
+.dropdownItems {
+  right: 0;
+  margin: 50px 50px;
+  display: none;
+  position: fixed;
+  text-align: center;
+  text-transform: capitalize;
+  z-index: 101;
+  min-width: 160px;
+  box-shadow: 0 2px 16px 0 rgba(0, 0, 0, 0.5); }
+  .dropdownItems__item {
+    color: black;
+    padding: 12px 16px;
+    text-decoration: none;
+    display: block;
+    background-color: white; }
+    .dropdownItems__item:hover {
+      background-color: black;
+      color: white; }
+
 .gallery__wrapper {
-  margin-top: 65px; }
+  margin-top: 47px; }
+
+.gallery__overlay {
+  position: absolute;
+  width: 100%;
+  height: 100%;
+  display: none;
+  background: rgba(0, 0, 0, 0.5); }
+  .gallery__overlay__p {
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    top: 50%;
+    left: 50%;
+    position: relative;
+    margin: 0;
+    text-align: center;
+    color: white;
+    font-size: 3em;
+    font-style: italic;
+    font-family: "Mongolian Baiti", "sans-serif"; }
 
 .gallery__image {
   height: 350px;
   background-position: center center;
   background-size: cover; }
-  .gallery__image:hover {
-    outline: 50px solid white;
-    outline-offset: -50px; }
 
 .popup {
   display: none;
@@ -768,6 +863,7 @@ li {
   background-color: white; }
 
 .button {
+  cursor: pointer;
   display: inline-block;
   width: 200px;
   height: 50px;
@@ -785,14 +881,29 @@ li {
     transition: background 600ms ease-in-out, color 300ms ease-in-out; }
   .button--homepage {
     transition: all 500ms ease-in; }
+    @media screen and (max-width: 992px) {
+      .button--homepage {
+        display: block;
+        width: 150px;
+        height: 40px;
+        margin: 0 auto 1px;
+        font-size: 1.2em; } }
     .button--homepage:last-of-type {
       margin-right: 0; }
+      @media screen and (max-width: 992px) {
+        .button--homepage:last-of-type {
+          margin-right: auto; } }
     .button--homepage:hover {
       background-image: url("../images/watercolor-png.png");
       background-color: transparent;
       background-size: auto 200%;
       background-repeat: no-repeat;
       background-position: center center; }
+  .button--myWork {
+    margin: 40px auto 0;
+    display: block; }
+    .button--myWork:last-of-type {
+      margin-right: auto; }
   .button--contact {
     display: block;
     margin-right: auto;
@@ -804,6 +915,9 @@ li {
   background-color: white;
   text-align: center;
   padding-bottom: 50px; }
+  @media screen and (max-width: 1366px) {
+    .mainSection {
+      top: 0; } }
   .mainSection:before {
     z-index: -1;
     position: absolute;
@@ -820,15 +934,30 @@ li {
   font-size: 55px;
   text-transform: capitalize;
   color: black;
-  padding-top: 30px; }
+  padding-top: 90px; }
+  @media screen and (max-width: 1366px) {
+    .text--head {
+      font-size: 2.5rem; } }
+  @media screen and (max-width: 992px) {
+    .text--head {
+      font-size: 2rem; } }
+  @media screen and (max-width: 490px) {
+    .text--head {
+      padding-top: 50px; } }
 
 .text--paragraph {
-  margin: 15px 0 30px;
+  margin: 70px 0 70px;
   font-family: "Mongolian Baiti", "sans-serif";
   font-size: 35px; }
-
-.buttonSection {
-  margin-bottom: 20px; }
+  @media screen and (max-width: 1366px) {
+    .text--paragraph {
+      font-size: 2.5em; } }
+  @media screen and (max-width: 992px) {
+    .text--paragraph {
+      font-size: 1.5em; } }
+  @media screen and (max-width: 490px) {
+    .text--paragraph {
+      margin: 30px 0 30px; } }
 
 .bg {
   position: fixed;
@@ -899,9 +1028,28 @@ li {
   background-color: black;
   font-style: italic;
   transition: all 500ms ease-in-out; }
+  @media screen and (max-width: 1366px) {
+    .quote {
+      font-size: 3em; } }
+  @media screen and (max-width: 992px) {
+    .quote {
+      font-size: 2.5em; } }
+  @media screen and (max-width: 490px) {
+    .quote {
+      font-size: 1.5em;
+      margin: 5px 0 0 10px; } }
   .quote:hover {
     color: white;
     background-color: black; }
+  .quote--homepage {
+    margin-bottom: 0;
+    cursor: default; }
+    .quote--homepage:hover {
+      background-image: url("../images/watercolor-png.png");
+      background-color: transparent;
+      background-size: auto 200%;
+      background-repeat: no-repeat;
+      background-position: center center; }
 
 .fade-in {
   transition: all 500ms ease-in-out; }
@@ -934,6 +1082,10 @@ li {
 .input {
   padding: 2px 0 0 10px; }
 
+.nostyle {
+  text-decoration: none;
+  color: inherit; }
+
 .about {
   max-height: 1360px;
   margin-top: -200px;
@@ -947,7 +1099,7 @@ li {
   @media screen and (max-width: 1366px) {
     .about {
       width: 50%; } }
-  @media screen and (max-width: 1025px) {
+  @media screen and (max-width: 480px) {
     .about {
       display: none; } }
   .about__me {

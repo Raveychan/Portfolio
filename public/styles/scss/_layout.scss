@@ -23,9 +23,38 @@
 
 	transition: $transition;
 
+	@include mq($max,1366px) {
+		font-size: 3em;
+	}
+
+	@include mq($max,992px) {
+		font-size: 2.5em;
+	}
+
+	@include mq($max,490px) {
+		font-size: 1.5em;
+		margin: 5px 0 0 10px;
+	}
+
 	&:hover {
 		color: $secondaryColor;
 		background-color: $primaryColor;
+	}
+
+	&--homepage {
+		margin-bottom: 0;
+		cursor: default;
+
+		&:hover {
+			background: {
+				image: url("../images/watercolor-png.png");
+				color: transparent;
+				size: auto 200%;
+				repeat: no-repeat;
+				position: center center;
+
+			}
+		}
 	}
 }
 
@@ -68,4 +97,9 @@
 
 .input {
 	padding: 2px 0 0 10px;
+}
+
+.nostyle {
+	text-decoration: none;
+	color: inherit;
 }

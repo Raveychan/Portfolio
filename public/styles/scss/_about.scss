@@ -14,7 +14,7 @@
 		width: 50%;
 	}
 
-	@include mq($max,1025px) {
+	@include mq($max,480px) {
 		display: none;
 	}
 

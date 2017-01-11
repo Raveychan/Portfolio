@@ -1,6 +1,18 @@
 .background-image {
-	height: 600px;
+	height: 900px;
 	width: 100%;
+
+	@include mq($max,1366px) {
+		height: 800px;
+	}
+
+	@include mq($max,992px) {
+		height: 630px;
+	}
+
+	@include mq($max,490px) {
+		height: 350px;
+	}
 
 	background: {
 		size: cover;
@@ -11,13 +23,38 @@
 
 	&__overlay {
 		position: absolute;
-		padding: 160px 0 0 8%;
+		padding: 140px 0 0 8%;
 		min-height: 200px;
-		width: 500px;
+		width: 80%;
 		z-index: 10;
+
+		@include mq($max,1366px) {
+			padding: 120px 0 0 4%;
+		}
+
+		@include mq($max,992px) {
+			padding: 100px 0 0 3%;
+		}
+
+		@include mq($max,490px) {
+			padding: 90px 0 0 4%;
+		}
 	}
 }
 
 .main-carousel {
 	z-index: -200;
+	height: 900px;
+
+	@include mq($max,1366px) {
+		height: 800px;
+	}
+
+	@include mq($max,992px) {
+		height: 630px;
+	}
+
+	@include mq($max,490px) {
+		height: 350px;
+	}
 }

@@ -29,6 +29,11 @@ li {
 
 	&__wrap {
 		margin: 0;
+
+		@include mq($max, 1025px) {
+			display: none;
+		}
+
 	}
 
 	&__left {
@@ -60,6 +65,70 @@ li {
 			background-color: $primaryColor;
 			color: $secondaryColor;
 			transition: $transition;
+		}
+	}
+}
+
+.burgerMenu {
+	color: $primaryColor;
+	position: fixed;
+	display: none;
+	right: 0;
+	margin: 5px 50px;
+
+	@include mq($max, 1025px) {
+		display: block;
+		z-index: 100;
+	}
+}
+
+.box-shadow-menu {
+	position: fixed;
+	padding: 0 32px 29px 0;
+}
+.box-shadow-menu:before {
+	content: "";
+	position: fixed;
+	width: 2em;
+	height: 0.3em;
+	background: black;
+	box-shadow:
+			0 0.5em 0 0 black,
+			0 1em 0 0 black,
+			0 1.5em 0 0 black;
+}
+
+.dropdown {
+
+
+	&__wrap {
+		display: inline-block;
+		z-index: 101;
+	}
+
+}
+
+.dropdownItems {
+	right: 0;
+	margin: 50px 50px;
+	display: none;
+	position: fixed;
+	text-align: center;
+	text-transform: capitalize;
+	z-index: 101;
+	min-width: 160px;
+	box-shadow: 0 2px 16px 0 rgba(0,0,0,0.5);
+
+	&__item {
+		color: $primaryColor;
+		padding: 12px 16px;
+		text-decoration: none;
+		display: block;
+		background-color: $secondaryColor;
+
+		&:hover {
+			background-color: $primaryColor;
+			color: $secondaryColor;
 		}
 	}
 }
