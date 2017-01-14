@@ -2,6 +2,9 @@
 include_once "inc/header.php";
 include_once "inc/navigation.php";
 ?>
+    <title>Contact Me</title>
+
+
     <div class="bg"></div>
         <section class="contact__wrapper">
             <section class="text--head contact--head">Contact me</section>

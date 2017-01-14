@@ -1,17 +1,19 @@
 <?php
 include_once "inc/header.php";
 
-$directory = "../../public/images/gallery/";
+$directory = "../public/assets/images/gallery/";
 
 include_once "inc/navigation.php";
 ?>
+<title>My Work</title>
+
     <div class="gallery__wrapper clearfix">
         <?php
         $images = opendir($directory);
         $i = 0;
         while ($image = readdir($images)) {
             if ($image !== "." && $image !== "..") {
-                echo('<div class="column-medium-4 gallery__image" data-attr="' . $i . '" style="background-image: url(' . ROOTDIR . '/images/gallery/' . $image . ')"><div class="gallery__overlay" data-attr="' . $i . '"><p class="gallery__overlay__p">SHOW</p></div></div>');
+                echo('<div class="column-medium-4 gallery__image" data-attr="' . $i . '" style="background-image: url(' . $GLOBALS['ROOTDIR'] . '/assets/images/gallery/' . $image . ')"><div class="gallery__overlay" data-attr="' . $i . '"><p class="gallery__overlay__p">SHOW</p></div></div>');
                 $i++;
             }
         }
@@ -23,7 +25,7 @@ include_once "inc/navigation.php";
         $i = 0;
         while ($image = readdir($images)) {
             if ($image !== "." && $image !== "..") {
-                echo('<img class="popup-img" data-attr="' . $i . '" src="' . ROOTDIR . '/images/gallery/' . $image . '">');
+                echo('<img class="popup-img" data-attr="' . $i . '" src="' . $GLOBALS['ROOTDIR'] . '/assets/images/gallery/' . $image . '">');
                 $i++;
             }
         }

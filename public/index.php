@@ -1,13 +1,15 @@
 <?php
-include_once "inc/header.php";
-include_once "inc/navigation.php";
-include_once "inc/slider.php";
+include_once("inc/header.php");
+include_once("inc/navigation.php");
+include_once("inc/slider.php");
 ?>
+<title>Welcome to my Portfolio!</title>
+
 
 <section class="mainSection">
     <div class="mainSection__mainText">
         <h1 class="text text--head">welcome!</h1>
-        <p class="text text--paragraph">My name is <b class="yellow">Sara Grembocka</b><br>,and this is my Portfolio</p>
+        <p class="text text--paragraph">My name is <b class="yellow">Sara Grembocka</b><br>and this is my Portfolio</p>
     </div>
     <div class="buttonSection">
         <div class="button button--homepage "><a href="about.php" class="nostyle">About Me</a></div>
@@ -16,5 +18,5 @@ include_once "inc/slider.php";
     </div>
 </section>
 <?php
-include_once "inc/footer.php";
+include_once("inc/footer.php");
 ?>

@@ -1,5 +1,5 @@
 
-<div class="logo logo__background"><img class="logo__image" src="<?= ROOTDIR; ?>/images/logo.png"></div>
+<div class="logo logo__background"><img class="logo__image" src="<?= $GLOBALS['ROOTDIR']; ?>/assets/images/logo.png"></div>
 <nav class="navigation">
     <ul class="navigation__wrap">
         <li><a href="index.php" class="navigation__elements" id="home">home</a></li>

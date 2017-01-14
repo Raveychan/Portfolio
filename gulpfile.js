@@ -16,7 +16,7 @@ var gutil = require('gulp-util');
 // Tasks for developing (coding)
 
 gulp.task('php', function () {
-  gulp.src('app/views/*')
+  gulp.src('public/*')
     .pipe(plumber())
     .pipe(browserSync.reload({
       stream: true
@@ -35,37 +35,37 @@ var handleError = function(error){
 }
 
 gulp.task('js', ['cleanJs'], function () {
-  return gulp.src(['public/scripts/own/my.js'])
+  return gulp.src(['public/assets/scripts/own/my.js'])
     .pipe(plumber())
     .pipe(rename('main.js'))
     .pipe(concat('main.js'))
-    .pipe(gulp.dest('public/scripts'))
+    .pipe(gulp.dest('public/assets/scripts'))
     .pipe(browserSync.stream());
 });
 
 gulp.task('scss', ['cleanScss'], function () {
-  return gulp.src(['public/styles/scss/main.scss'])
+  return gulp.src(['public/assets/styles/scss/main.scss'])
     .pipe(plumber(handleError))
     .pipe(sass())
     .pipe(concat('main.css'))
-    .pipe(gulp.dest('public/styles'))
+    .pipe(gulp.dest('public/assets/styles'))
     .pipe(browserSync.stream());
 });
 
 gulp.task('cleanScss', function () {
-  return gulp.src('public/styles/styles.css')
+  return gulp.src('public/assets/styles/styles.css')
     .pipe(vinylPaths(del))
 });
 
 gulp.task('cleanJs', function () {
-  return gulp.src('public/scripts/main.js')
+  return gulp.src('public/assets/scripts/main.js')
     .pipe(vinylPaths(del))
 });
 
 gulp.task('watch', function() {
-  gulp.watch(['public/styles/**/*.scss', 'public/styles/**/*.css', '!public/styles/styles.css'], ['scss']);
-  gulp.watch(['public/scripts/**/*.js', '!public/scripts/main.js'], ['js']);
-  gulp.watch('public/views/*.php', ['php']);
+  gulp.watch(['public/assets/styles/**/*.scss', 'public/styles/**/*.css', '!public/styles/styles.css'], ['scss']);
+  gulp.watch(['public/assets/scripts/**/*.js', '!public/scripts/main.js'], ['js']);
+  gulp.watch('public/*.php', ['php']);
 })
 
 gulp.task('default', gulpSequence(['php', 'js', 'scss'], 'host', 'watch'));
@@ -79,7 +79,7 @@ gulp.task('htmlDeploy', function () {
 });
 
 gulp.task('scssDeploy', function () {
-  gulp.src(['public/styles/styles.css'])
+  gulp.src(['public/assets/styles/styles.css'])
     .pipe(plumber())
     .pipe(autoprefixer())
     .pipe(minify())
@@ -87,7 +87,7 @@ gulp.task('scssDeploy', function () {
 });
 
 gulp.task('jsDeploy', function () {
-  return gulp.src(['public/scripts/**/*.js', '!public/scripts/main.js'])
+  return gulp.src(['public/assets/scripts/**/*.js', '!public/scripts/main.js'])
     .pipe(plumber())
     .pipe(rename('main.js'))
     .pipe(concat('main.js'))
@@ -96,7 +96,7 @@ gulp.task('jsDeploy', function () {
 });
 
 gulp.task('imagesDeploy', function () {
-  gulp.src(['public/images/*.png', 'public/images/*.jpg', 'public/images/*.ico'])
+  gulp.src(['public/essets/images/*.png', 'public/images/*.jpg', 'public/images/*.ico'])
     .pipe(plumber())
     .pipe(imageopt({
       optimalizationLevel: 5,

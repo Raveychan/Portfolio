@@ -1,1 +1,0 @@
-<?php define('ROOTDIR', 'http://'.$_SERVER['HTTP_HOST'].'/public');

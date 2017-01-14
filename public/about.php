@@ -2,15 +2,18 @@
 include_once "inc/header.php";
 include_once "inc/navigation.php";
 ?>
+<title>About Me</title>
+
+
 <div class="about about--left">
-    <img class="about__image" src="<?= ROOTDIR; ?>/images/owl.png">
+    <img class="about__image" src="<?= $GLOBALS['ROOTDIR']; ?>/assets/images/owl.png">
 </div>
 <div class="about flipX about--right">
-    <img class="about__image" src="<?= ROOTDIR; ?>/images/owl.png">
+    <img class="about__image" src="<?= $GLOBALS['ROOTDIR']; ?>/assets/images/owl.png">
 </div>
 
 <section class="about__me">
-    <img class="about__image--decoration about__image--top flipY" src="<?= ROOTDIR; ?>/images/decoration.png">
+    <img class="about__image--decoration about__image--top flipY" src="<?= $GLOBALS['ROOTDIR']; ?>/assets/images/decoration.png">
     <h2>My name is Sara Grembocka</h2>
     <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Praesent vel enim rutrum, mollis lacus eget, sodales
         ligula. Mauris dignissim ligula metus, eu auctor mi sodales non. Nulla eleifend dui vel luctus consequat. Duis
@@ -40,7 +43,7 @@ include_once "inc/navigation.php";
         pharetra. Sed semper sem est, nec ullamcorper purus lobortis eget. Praesent iaculis odio ut nibh placerat
         auctor.
     </p>
-    <img class="about__image--decoration about__image--bottom" src="<?= ROOTDIR; ?>/images/decoration.png">
+    <img class="about__image--decoration about__image--bottom" src="<?= $GLOBALS['ROOTDIR']; ?>/assets/images/decoration.png">
     <div class="button button--homepage button--myWork"><a href="myWork.php" class="nostyle">My Work</a></div>
 </section>
 

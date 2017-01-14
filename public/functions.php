@@ -1,0 +1,1 @@
+<?php $GLOBALS['ROOTDIR'] = 'http://'.$_SERVER['SERVER_NAME'];
