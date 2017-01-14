@@ -72,43 +72,24 @@ gulp.task('default', gulpSequence(['php', 'js', 'scss'], 'host', 'watch'));
 
 // Tasks for deploying (distribution)
 
-gulp.task('htmlDeploy', function () {
-  gulp.src(['public/*', 'public/.*', 'public/fonts/**/*'])
-    .pipe(plumber())
-    .pipe(gulp.dest('dist'));
-});
-
-gulp.task('scssDeploy', function () {
-  gulp.src(['public/assets/styles/styles.css'])
-    .pipe(plumber())
-    .pipe(autoprefixer())
-    .pipe(minify())
-    .pipe(gulp.dest('dist/styles'));
+gulp.task('scssDeploy', ['cleanScss'], function () {
+  return gulp.src(['public/assets/styles/scss/main.scss'])
+      .pipe(plumber(handleError))
+      .pipe(sass())
+      .pipe(autoprefixer())
+      .pipe(minify())
+      .pipe(concat('main.css'))
+      .pipe(gulp.dest('public/assets/styles'))
 });
 
 gulp.task('jsDeploy', function () {
-  return gulp.src(['public/assets/scripts/**/*.js', '!public/scripts/main.js'])
-    .pipe(plumber())
-    .pipe(rename('main.js'))
-    .pipe(concat('main.js'))
-    .pipe(uglify())
-    .pipe(gulp.dest('dist/scripts'))
+  return gulp.src(['public/assets/scripts/main.js'])
+      .pipe(plumber())
+      .pipe(rename('main.min.js'))
+      .pipe(concat('main.min.js'))
+      .pipe(uglify())
+      .pipe(gulp.dest('public/assets/scripts'))
 });
 
-gulp.task('imagesDeploy', function () {
-  gulp.src(['public/essets/images/*.png', 'public/images/*.jpg', 'public/images/*.ico'])
-    .pipe(plumber())
-    .pipe(imageopt({
-      optimalizationLevel: 5,
-      progressive: true,
-      interlaced: true
-    }))
-    .pipe(gulp.dest('dist/images'));
-});
 
-gulp.task('cleanDeploy', function () {
-  return gulp.src('dist')
-    .pipe(vinylPaths(del))
-});
-
-gulp.task('deploy', gulpSequence(['html', 'js', 'scss'], 'cleanDeploy', ['htmlDeploy', 'jsDeploy', 'scssDeploy']));
+gulp.task('deploy', gulpSequence(['jsDeploy', 'scssDeploy']));
